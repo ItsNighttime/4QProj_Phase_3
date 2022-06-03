@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<style>
+	body{
+		font-family: Arial, Helvetica, sans-serif;
+	}
+	header{
+		background-color: white;
+		border: 3px solid black;
+	}
+	p{
+		border: 3px solid black;
+		border-radius: 10px;	
+		width: 720px;
+		font-size: 20px;
+		background-color: white;
+	}
+	#homePage{
+		border: 3px solid black;
+		border-radius: 10px;
+		position: absolute;
+		text-align: center;
+		bottom: 200px;
+		font-size: 40px;
+		right: 480px;
+		width: 200px;
+	}
+	#tryAgain{
+		border: 3px solid black;
+		border-radius: 10px;
+		position: absolute;
+		text-align: center;
+		bottom: 200px;
+		font-size: 40px;
+		left: 480px;
+		width: 200px;
+	}
+	#homePage:hover, #tryAgain:hover{
+		background-color: green;
+		color: white;
+	}
+	footer:active{
+		background-color: #023020	;
+		color: #ADD8E6;
+	}
+</style>
+<html>
+	<body>
+		<center>
+			<header>
+				<h2>Here's your score</h2>
+				<h1 id = "score"></h1>
+				<h3 id = "remarks"></h3>
+			</header>
+			<article>
+				<p>Now that you have reached the end of the test, you can either try again or quit. Simply click a button to do either of 
+				these.</p>
+			</article>
+		</center>
+		<footer>
+			<a href = "C:\Users\ned\Documents\4QProj_Phase_3\files\index.html">
+				<button id = "homePage">Home</button>
+			</a>
+			<a href = "C:\Users\ned\Documents\4QProj_Phase_3\files\Easy Riddles.html">
+				<button id = "tryAgain">Try Again!</button>
+			</a>
+		</footer>
+	</body>
+	<script>
+		var showScore = sessionStorage.getItem("finalScore");
+			document.getElementById("score").innerHTML = showScore;
+		if(showScore == 10){
+			document.getElementById("remarks").innerHTML = "Wow! You got a perfect score! Congratulations! You have now taken my
+			place as the game's Riddle Master!";
+		}
+		else if(showScore < 10 && showScore >= 7){
+			document.getElementById("remarks").innerHTML = "Wow! You got a really high score! I'm impressed you got all of that
+			right. But you are still not good enough! You still are not ready to take my place as the Riddle Master!"
+		}
+		else if(showScore <= 6 && showScore >= 4){
+			document.getElementById("remarks").innerHTML = "Hm. Good job on getting a score like that. Not many people can get a
+			score as high as that. However, you still have got a lot to learn before you can even come close to being as good as
+			me."
+		}
+		else{
+			document.getElementById("remarks").innerHTML = "Hahahahaha! Pathetic. C'mon! Surely you can do better than that!
+			C'mon! Try again!"
+		}
+	</script>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<style>
+	body{
+		background-color: green;
+		font-family: Arial, Helvetica, sans-serif;
+	}
+	header{
+		background-color: white;
+		border: 3px solid black;
+		
+	}
+	form{
+		margin: 10px;
+		font-size: 20px;
+		border: 3px solid black;
+		width: 960px;
+		border-radius: 10px;
+		background-color: white;
+		position: relative;
+		left: 270px;
+		height: 330px;
+	}
+	p{
+		text-indent: 10px;
+	}
+	#score{
+		font-size: 20px;
+		position: absolute;
+		right: 25px;
+		text-align: center;
+		bottom: 25px;
+		background-color: lime;
+		width: 175px;
+	}
+	#previousPage{
+		font-size: 20px;
+		position: absolute;
+		left: 25px;
+		text-align: center;
+		bottom: 25px;
+		background-color: lime;
+		width: 175px;
+	}
+	#previousPage:hover, #score:hover{
+		background-color: green;
+		color: white;
+	}
+	#previousPage:active, #score:active{
+		background-color: #023020	;
+		color: #ADD8E6;
+	}
+</style>
+<html>
+	<body>
+		<center>
+			<header>
+				<h1>Hard Riddles</h1>
+				<h3>Now, it's time for the hardest riddles of them all. I will be very surprised if you manage to get both of these right...</h3>
+			</header>
+		</center>
+		<article>
+			<form onsubmit = "return recordpoints()">
+				<p>9. What 10 letter word starts with gas?</p>
+				<select name = "choices9" id = "answer9" onblur = "border(this)">
+					<option value "retirement">Retirement</option>
+					<option value "television">Television</option>
+					<option value "aberration">Aberration</option>
+					<option value "automobile" id = "correct">Automobile</option>
+				</select>
+				<p>10. What flies when it's born, lies when it's alive, and runs when it's dead?</p>
+				<select name = "choices10" id = "answer10" onblur = "border(this)">
+					<option value = "eaglet">An eaglet</option>
+					<option value = "snowflake" id = "correct10">A snowflake</option>
+					<option value = "sand">A grain of sand</option>
+					<option value = "fly">A fruit fly</option>
+				</select>
+				<br>
+				<input name = "sub" type = "submit" value = "Save answers">
+			</form>
+		</article>
+		<footer>
+			<a href = "C:\Users\ned\Documents\4QProj_Phase_3\files\Medium Riddles.html">
+				<button id = "previousPage">Previous Page</button>
+			</a>
+			<a href = "C:\Users\ned\Documents\4QProj_Phase_3\files\Score.html">
+				<button id = "score">See your score!</button>
+			</a>
+		</footer>
+	</body>
+	<script>
+		function recordpoints(){
+			var ans9 = document.getElementById("answer9").value;
+			var cor9 = document.getElementById("correct9").value;
+			var ans10 = document.getElementById("answer10").value;
+			var cor10 = document.getElementById("correct10").value;
+			
+			if(ans9 == cor9){
+				finalScore = finalScore + 1;
+			}
+			else{
+				finalScore = finalScore;
+			}
+			if(ans10 == cor10){
+				finalScore = finalScore + 1;
+			}
+			else{
+				finalScore = finalScore;
+			}
+			sessionStorage.setItem("finalScore", finalScore);
+		}
+	</script>
+</html>

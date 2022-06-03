@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<style>
+	body{
+		background-color: green;
+		font-family: Arial, Helvetica, sans-serif;		
+	}
+	header{
+		background-color: white;
+		border: 3px solid black;
+	}
+	p{
+		border: 3px solid black;
+		border-radius: 10px;	
+		width: 720px;
+		font-size: 20px;
+		background-color: white;
+	}
+	button{
+		border: 3px solid black;
+		border-radius: 10px;
+		font-size: 40px;
+	}
+	button:hover{
+		background-color: green;
+		color: white;
+	}
+	button:active{
+		background-color: #023020	;
+		color: #ADD8E6;
+	}
+</style>
+<html>
+	<center>
+		<body>
+			<header>
+				<h1>Riddle Master!</h1>
+			</header>
+			<article>
+				<img src = "C:\Users\ned\Documents\4QProj_Phase_2\images\Brain Logo.png" >
+				<p>Oh, hi there! Welcome to Riddle Master! Come, test how smart you are by answering these brain twisting riddles where 
+				nothing is what it seems. Think you got what it takes? Let's find out. To begin this test, just press the button below.</p>
+				<a href = "C:\Users\ned\Documents\4QProj_Phase_2\files\Easy Riddles.html">
+					<button>Start the test!</button>
+				</a>
+			</article>
+		</body>
+	<center>
+</html>

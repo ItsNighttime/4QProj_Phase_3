@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<style>
+	body{
+		background-color: green;
+		font-family: Arial, Helvetica, sans-serif;
+	}
+	header{
+		background-color: white;
+		border: 3px solid black;
+	}
+	form{
+		margin: 10px;
+		font-size: 20px;
+		border: 3px solid black;
+		width: 960px;
+		border-radius: 10px;
+		background-color: white;
+		position: relative;
+		left: 270px;
+		height: 500px;
+	}
+	p{
+		text-indent: 10px;
+	}
+	button{
+		font-size: 20px;
+		position: absolute;
+		right: 25px;
+		text-align: center;
+		bottom: 25px;
+		background-color: lime;
+		width: 175px;
+	}
+	button:hover{
+		background-color: green;
+		color: white	
+	}
+	button:active{
+		background-color: #023020	;
+		color: #ADD8E6;
+	}
+</style>
+	<body>
+		<center>
+			<header>
+				<h1>Easy Riddles</h1><br>
+				<h3>Let's start with some simple riddles. The rules are simple. Just pick the correct answer among the 4 choices. But remember, not everything is as it seems</h3><br>
+			</header>
+		</center>
+		<article>
+			<form onsubmit = "return recordScore()">
+				<p>1. What has to be broken to be used?</p>
+				<select name = "choices1" id = "answer1" onblur = "border(this)">
+					<option value = "egg" id = "correct1">Eggs</option>
+					<option value = "glass">Glass</option>
+					<option value = "rock">Rocks</option>
+					<option value = "wood">Wood</option>
+				</select>
+				<p>2. What is always in front of you but cannot be seen?</p>
+				<select name = "choices2" id = "answer2" onblur = "border(this)">
+					<option value = "air">Air</option>
+					<option value = "glasses">Your glasses</option>
+					<option value = "future" id = "correct2">The future</option>
+					<option value = "light">Light</option>
+				</select>
+				<p>3. What goes up but never goes down?</p>
+				<select name = "choices3" id = "answer3" onblur = "border(this)">
+					<option value = "population">Population of humanity</option>
+					<option value = "age" id = "correct3">Your age</option>
+					<option value = "younger">The number of people younger than you</option>
+					<option value = "letters">The letters in the english alphabet</option>
+				</select>
+				<p>4. A man who was outside in the rain without an umbrella or a hat didn't get a single hair on his head wet. How?</p>
+				<select name = "choices4" id = "answer4" onblur = "border(this)">
+					<option value = "underSomething">There was something above him that was covering the rain</option>
+					<option value = "illusion">He was a hallucination. Go back to sleep!</option>
+					<option value = "game">He is not a real human, he's a game character...in a game that's not very realistic</option>
+					<option value = "bald" id = "correct4">He iss bald. He has no hair.</option>
+				</select>
+				<p>5. What can you keep after giving someone?</p>
+				<select name = "choices5" id = "answer5" onblur = "border(this)">
+					<option value = "anything">Anything</option>
+					<option value = "heart">Heart</option>
+					<option value = "promise" id = "correct5">A promise</option>
+					<option value = "videos">Youtube videos</option>
+				</select>
+				<br>
+				<input name = "sub" type = "submit" value = "Save answers">
+			</form>
+		</article>
+			<footer>
+				<a href = "C:\Users\ned\Documents\4QProj_Phase_3\files\Medium Riddles.html" id = "nextPage">
+					<button>Next Page</button>
+				</a>
+			</footer>
+	</body>
+	<script>
+		
+		function recordScore(){
+		var ans1 = document.getElementById("answer1").value;
+		var cor1 = document.getElementById("correct1").value;
+		var ans2 = document.getElementById("answer2").value;
+		var cor2 = document.getElementById("correct2").value;
+		var ans3 = document.getElementById("answer3").value;
+		var cor3 = document.getElementById("correct3").value;
+		var ans4 = document.getElementById("answer4").value;
+		var cor4 = document.getElementById("correct4").value;
+		var ans5 = document.getElementById("answer5").value;
+		var cor5 = document.getElementById("correct5").value;
+		var score = 0;
+			if(ans1 == cor1){
+				score = score + 1;
+			}
+			else{
+				score = score;
+			}
+			if(ans2 == cor2){
+				score = score + 1;
+			}
+			else{
+				score = score;
+			}
+			if(ans3 == cor3){
+				score = score + 1;
+			}
+			else{
+				score = score;
+			}
+			if(ans4 == cor4){
+				score = score + 1;
+			}
+			else{
+				score = score;
+			}
+			if(ans5 == cor5){
+				score = score + 1;
+			}
+			else{
+				score = score;
+			}
+			sessionStorage.setItem("score", score);
+		}
+	</script>
+</html>

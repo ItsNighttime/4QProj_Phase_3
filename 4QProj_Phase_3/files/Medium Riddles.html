@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<style>
+	body{
+		background-color: green;
+		font-family: Arial, Helvetica, sans-serif;
+	}
+	header{
+		background-color: white;
+		border: 3px solid black;
+		
+	}
+	form{
+		margin: 10px;
+		font-size: 20px;
+		border: 3px solid black;
+		width: 960px;
+		border-radius: 10px;
+		background-color: white;
+		position: relative;
+		left: 270px;
+		height: 330px;
+	}
+	p{
+		text-indent: 10px;
+	}
+	#nextPage{
+		font-size: 20px;
+		background-color: lime;
+		position: absolute;
+		right: 25px;
+		text-align: center;
+		bottom: 25px;
+		width: 175px;
+	}
+	#previousPage{
+		font-size: 20px;
+		background-color: lime;
+		position: absolute;
+		left: 25px;
+		text-align: center;
+		bottom: 25px;
+		width: 175px;
+	}
+	#previousPage:hover, #nextPage:hover{
+		background-color: green;
+		color: white;
+	}
+	#previousPage:active, #nextPage:active{
+		background-color: #023020	;
+		color: #ADD8E6;
+	}
+</style>
+<html>
+	<body>
+		<center>
+			<header>
+				<h1>Medium Riddles</h1>
+				<h3>Now, let's take it up a notch. It's time for some slightly harder riddles.</h3>
+			</header>
+		</center>
+		<article>
+			<form onsubmit = "return recordpoints()">
+				<p>6. How far can a fox run into the woods?</p>
+				<select name = "choices6" id = "answer6" onblur = "border(this)">
+					<option value = "halfway" id = "correct6">Halfway</option>
+					<option value = "small">Only a little far</option>
+					<option value = "end">The fox can run to the end of the forest</option>
+					<option value = "far">Very far into the forest</option>
+				</select>
+				
+				<p>7. I am only useful when I am full, yet I am always full of holes. What am I?</p>
+				<select name = "choices7" id = "answer7" onblur = "border(this)">
+					<option value = "sift">A sift</option>
+					<option value = "everything">Anything</option>
+					<option value = "sponge" id = "correct7">A sponge</option>
+					<option value = "jar">A jar</option>
+				</select>
+				
+				<p>8. I am something to make you think, I am something to make you know. I am something to which the answer you might never know. What am I?</p>
+				<select name = "choices8" id = "answer8" onblur = "border(this)">
+					<option value = "book">A book</option>
+					<option value = "question">A question</option>
+					<option value = "riddle" id = "correct8">A riddle</option>
+					<option value = "life">Life</option>
+				</select>
+				<br>
+				<input name = "sub" type = "submit" value = "Save answers">
+			</form>
+		</article>
+		<footer>
+			<a href = "C:\Users\ned\Documents\4QProj_Phase_3\files\Easy Riddles.html">
+				<button id = "previousPage">Previous Page</button>
+			</a>
+			<a href = "C:\Users\ned\Documents\4QProj_Phase_3\files\Hard Riddles.html">
+				<button id = "nextPage">Next Page</button>
+			</a>
+		</footer>
+	</body>
+	<script>
+		function recordpoints(){
+		var ans6 = document.getElementById("answer6").value;
+		var cor6 = document.getElementById("correct6").value;
+		var ans7 = document.getElementById("answer7").value;
+		var cor7 = document.getElementById("correct7").value;
+		var ans8 = document.getElementById("answer8").value;
+		var cor8 = document.getElementById("correct8").value;
+		var points = parseInt(sessionStorage.getItem("score"));
+
+			if(ans6 == cor6){
+				points = points + 1;
+			}
+			else{
+				points = points;
+			}
+			if(ans7 == cor7){
+				points = points + 1;
+			}
+			else{
+				points = points;
+			}
+			if(ans8 == cor8){
+				points = points + 1;
+			}
+			else{
+				points = points;
+			}
+			sessionStorage.setItem("points", points);
+		}
+	</script>
+</html>
